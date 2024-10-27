@@ -257,7 +257,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 26);
             this.label6.TabIndex = 7;
-            this.label6.Text = "字体样式 :";
+            this.label6.Text = "样式 :";
             // 
             // label4
             // 
@@ -268,7 +268,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 28);
             this.label4.TabIndex = 1;
-            this.label4.Text = "字体大小 :";
+            this.label4.Text = "大小 :";
             // 
             // font_size
             // 
