@@ -1,0 +1,34 @@
+[
+	[
+		"Custom", 
+		"Segoe UI", "10.0", "0"
+	],
+	[
+		"Default", 
+		"Segoe Print", "10.0", "0"
+	],
+	[
+		"Normal", 
+		"Segoe UI", "10.0", "0"
+	],
+	[
+		"Handwriting", 
+		"Segoe Print", "10.0", "0"
+	],
+	[
+		"Monospaced", 
+		"Consolas", "9.5", "0"
+	],
+	[
+		"Small", 
+		"Segoe UI", "8.0", "0"
+	],
+	[
+		"Large", 
+		"Segoe UI", "12.0", "0"
+	],
+	[
+		"Semibold", 
+		"Segoe UI Semibold", "10.0", "0"
+	]
+]

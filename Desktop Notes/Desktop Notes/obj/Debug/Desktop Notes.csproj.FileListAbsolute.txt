@@ -1,0 +1,61 @@
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe.config
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.exe
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.pdb
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csprojResolveAssemblyReference.cache
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Component1.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.MainForm.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.HelpForm.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.NoteManager.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Properties.Resources.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.SettingForm.resources
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.GenerateResource.Cache
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe.manifest
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.application
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.pdb
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.dll
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.pdb
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.xml
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.exe.manifest
+G:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.application
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe.config
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe.manifest
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.application
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.exe
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Desktop Notes.pdb
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.pdb
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.xml
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csprojResolveAssemblyReference.cache
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Component1.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.MainForm.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.HelpForm.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.NoteManager.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Properties.Resources.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.SettingForm.resources
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.GenerateResource.Cache
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.exe.manifest
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.application
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.exe
+E:\Projects\GitHub\Desktop-Notes\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.pdb
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.exe.config
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.exe.manifest
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.application
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.exe
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.pdb
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.dll
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\bin\Debug\Newtonsoft.Json.xml
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.AssemblyReference.cache
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Component1.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.MainForm.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.HelpForm.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.NoteManager.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.Properties.Resources.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.SettingForm.resources
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.GenerateResource.cache
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.CoreCompileInputs.cache
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.exe.manifest
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.application
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop Notes.csproj.CopyComplete
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.exe
+D:\Desktop-Notes-master\Desktop-Notes-master\Desktop Notes\Desktop Notes\obj\Debug\Desktop_Notes.pdb
