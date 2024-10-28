@@ -13,8 +13,9 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x' # Ensure this version matches your project requirements
+          dotnet-version: '6.0.x' 
 
       - name: Build
-        run: dotnet build ./Desktop Notes/Desktop Notes/Desktop Notes.csproj
+        run: dotnet build "./Desktop Notes/Desktop Notes/Desktop Notes.csproj"
         shell: bash
+
