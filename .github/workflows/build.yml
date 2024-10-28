@@ -13,13 +13,18 @@ jobs:
       - name: Setup .NET Framework
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'  # 这一步不是必须的，但对于可能需要使用.NET CLI工具的场景有用
+          dotnet-version: '6.0.x'  
 
       - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1.1  # 这个Action帮助配置MSBuild的环境路径
+        uses: microsoft/setup-msbuild@v1.1  
 
       - name: Build
         run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
+        shell: powershell
+
+      - name: Create installer
+        run: |
+          wix build -s "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" -o "./Desktop Notes/Desktop Notes/bin/Release/Install Desktop Notes.msi"
         shell: powershell
         
       - name: Upload Artifacts
@@ -27,4 +32,6 @@ jobs:
         with:
           name: release-artifacts
           path: "Desktop Notes/Desktop Notes/bin/Release/**"
+
+      
 
