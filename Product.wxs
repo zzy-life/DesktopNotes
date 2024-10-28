@@ -1,6 +1,6 @@
-<?define Name = "DesktopClock"?>
-<?define Manufacturer = "Daniel Chalmers"?>
-<?define Guid = "6BD5BA59-2419-4A0E-89F8-C6F8A4EA08F7"?>
+<?define Name = "Desktop_Notes"?>
+<?define Manufacturer = "Webarcx"?>
+<?define Guid = "E4D9B1E5-BE35-4CD8-8A81-983EDA7089B8"?>
 
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
 
@@ -17,9 +17,7 @@
     <Media Id="1" Cabinet="App.cab" EmbedCab="yes" />
 
     <Feature Id="ProductFeature" Title="$(var.Name)" Level="1">
-      <!--Main executable-->
       <ComponentGroupRef Id="ProductComponents" />
-      <!--Program Menu shortcut-->
       <ComponentRef Id="ApplicationShortcut" />
     </Feature>
 
@@ -44,16 +42,14 @@
     </InstallExecuteSequence>
   </Package>
 
-  <!--Main executable-->
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="MainExe" Guid="2148738D-B1F4-48BD-8615-1617541C6BB3">
-      <File Id="MainExe" Name="Desktop_Notes.exe" Source="Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.exe" />
+      <File Id="MainExe" Name="Desktop_Notes.exe" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe" />
       </Component>
     </ComponentGroup>
   </Fragment>
 
-  <!--Program Menu shortcut-->
   <Fragment>
     <DirectoryRef Id="ApplicationProgramsFolder">
       <Component Id="ApplicationShortcut">
