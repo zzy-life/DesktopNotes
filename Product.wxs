@@ -8,7 +8,7 @@
 
     <SummaryInformation Manufacturer="$(var.Manufacturer)" />
 
-    <Icon Id="Logo.ico" SourceFile="$(var.Name)\$(var.Name).ico" />
+    <Icon Id="Logo.ico" SourceFile="Images\main.ico" />
 
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
     <Property Id="ARPNOREPAIR" Value="yes" Secure="yes" />
@@ -48,7 +48,7 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="MainExe" Guid="2148738D-B1F4-48BD-8615-1617541C6BB3">
-        <File Id="MainExe" Name="$(var.Name).exe" Source="publish/$(var.Name).exe" />
+      <File Id="MainExe" Name="Desktop_Notes.exe" Source="Desktop Notes\Desktop Notes\bin\Debug\Desktop_Notes.exe" />
       </Component>
     </ComponentGroup>
   </Fragment>
