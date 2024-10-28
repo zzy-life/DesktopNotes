@@ -19,11 +19,6 @@ runs:
       shell: bash
       run: dotnet publish ./Desktop Notes/Desktop Notes/Desktop Notes.csproj -o "publish" -c Release -r win-x64
 
-    - name: Install WiX Toolset
-      run: |
-        choco install wixtoolset
-      shell: powershell
-
     - name: Create installer
       shell: bash
       run: |

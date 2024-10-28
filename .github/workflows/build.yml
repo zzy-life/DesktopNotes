@@ -22,6 +22,11 @@ jobs:
         run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
         shell: powershell
 
+      - name: Install WiX Toolset
+        run: |
+          choco install wixtoolset
+        shell: powershell
+
       - name: Create installer
         run: |
           wix build -s "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" -o "./Desktop Notes/Desktop Notes/bin/Release/Install Desktop Notes.msi"
