@@ -10,4 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: ./.github/actions/prepare-for-release
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x' # Ensure this version matches your project requirements
+
+      - name: Build
+        run: dotnet build ./Desktop Notes/Desktop Notes/Desktop Notes.csproj
+        shell: bash
