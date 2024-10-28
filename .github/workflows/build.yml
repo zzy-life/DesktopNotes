@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+   build-and-upload:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,4 +21,14 @@ jobs:
       - name: Build
         run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
         shell: powershell
+        
+      - name: Publish
+        run: dotnet publish "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" -c Release -o ./Desktop Notes/Desktop Notes/bin/Release -r win-x64
+        shell: bash
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-artifacts
+          path: "Desktop Notes/Desktop Notes/bin/Release/**"
 
