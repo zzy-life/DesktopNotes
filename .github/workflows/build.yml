@@ -22,10 +22,6 @@ jobs:
         run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
         shell: powershell
         
-      - name: Publish
-        run: dotnet publish "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" -c Release -o ./Desktop Notes/Desktop Notes/bin/Release -r win-x64
-        shell: bash
-
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
