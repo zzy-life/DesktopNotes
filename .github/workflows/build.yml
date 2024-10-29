@@ -2,6 +2,8 @@ name: Build
 
 on:
   push:
+    branches:
+      - main
   pull_request:
 
 jobs:
@@ -26,13 +28,13 @@ jobs:
       - name: Create installer
         run: |
           dotnet tool install --global wix --version 4.0.5
-          wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop Notes.msi"
+          wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
         
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: release-artifacts
-          path: "Desktop Notes/Desktop Notes/bin/Release/**"
+          name: Desktop Notes
+          path: "Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
 
       
 
