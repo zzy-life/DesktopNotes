@@ -11,15 +11,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - uses: ./.github/actions/prepare-for-release
-
-      - name: Create GitHub release
-        uses: ncipollo/release-action@v1
+      - name: Setup .NET Framework
+        uses: actions/setup-dotnet@v4
         with:
-          artifacts: "publish/*.exe,publish/*.msi"
-          allowUpdates: true
-          removeArtifacts: true
-          replacesArtifacts: true
-          artifactErrorsFailBuild: true
-          makeLatest: true
-          prerelease: contains(github.ref, 'beta')
+          dotnet-version: '6.0.x'  
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.1  
+
+      - name: Build
+        run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
+        shell: powershell
+        
+
+      - name: Create installer
+        run: |
+          dotnet tool install --global wix --version 4.0.5
+          wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+        
+      - name: Upload MSI as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Desktop Notes
+          path: "Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name  }}
+          release_name: Release ${{ github.ref_name  }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+          asset_name: Desktop_Notes.msi
+          asset_content_type: application/octet-stream
