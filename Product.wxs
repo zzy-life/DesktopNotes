@@ -21,13 +21,19 @@
       <ComponentRef Id="ApplicationShortcut" />
     </Feature>
 
-    <StandardDirectory Id="LocalAppDataFolder">
-      <Directory Id="INSTALLFOLDER" Name="$(var.Name)" />
-    </StandardDirectory>
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
 
-    <StandardDirectory Id="ProgramMenuFolder">
-      <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)" />
-    </StandardDirectory>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="INSTALLFOLDER" Name="$(var.Name)">
+        </Directory>
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)">
+        </Directory>
+      </Directory>
+    </Directory>
 
     <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
     <Upgrade Id="$(var.Guid)">

@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-   build-and-upload:
+  build-and-upload:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,18 +23,22 @@ jobs:
       - name: Build
         run: msbuild "./Desktop Notes/Desktop Notes/Desktop Notes.csproj" /p:Configuration=Release /p:Platform="AnyCPU"
         shell: powershell
-        
+       
+      - name: Install WiX Toolset
+        run: |
+          choco install wixtoolset
+          echo "Wix Toolset installed."
+        shell: powershell
 
       - name: Create installer
         run: |
-          dotnet tool install --global wix --version 4.0.5
-          wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
-        
+          # Assume wix tools (candle.exe and light.exe) are added to the PATH by choco install
+          candle -arch x64 -out "./Desktop Notes/Desktop Notes/bin/Release/Installer.wixobj" "./Desktop Notes/Desktop Notes/Product.wxs"
+          light -out "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi" "./Desktop Notes/Desktop Notes/bin/Release/Installer.wixobj"
+        shell: powershell
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Desktop Notes
           path: "Desktop Notes/Desktop Notes/bin/Release/**"
-
-      
-
