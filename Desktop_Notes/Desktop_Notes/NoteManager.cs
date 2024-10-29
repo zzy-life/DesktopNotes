@@ -79,7 +79,7 @@ namespace Desktop_Notes
         {
             if (listView1.CheckedItems == null) return;
 
-            if (MessageBox.Show("您确定删除所有选定的笔记吗?", "全部删除?",
+            if (MessageBox.Show("Are you sure to delete all selected notes?", "Delete All?",
                 MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No) return;
 
             foreach (ListViewItem litm in listView1.CheckedItems)
