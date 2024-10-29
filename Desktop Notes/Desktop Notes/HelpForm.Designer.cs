@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HelpForm));
             this.versionLabel = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.developerLabel = new System.Windows.Forms.Label();
             this.productName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -64,6 +65,23 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "790002517@qq.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+
+
+            // linkLabel2
+            // 
+            this.linkLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(this.linkLabel1.Location.X, this.linkLabel1.Location.Y + this.linkLabel1.Height + 20);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(3);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(184, 17);
+            this.linkLabel2.TabIndex = 9;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "www.webedc.com";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // developerLabel
             // 
@@ -115,6 +133,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.linkLabel1, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.linkLabel2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.versionLabel, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.developerLabel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.productName, 0, 1);
@@ -157,6 +176,7 @@
 
         private System.Windows.Forms.Label versionLabel;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Label developerLabel;
         private System.Windows.Forms.Label productName;
         private System.Windows.Forms.Button button1;

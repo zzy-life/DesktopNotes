@@ -16,5 +16,11 @@ namespace Desktop_Notes
             try { System.Diagnostics.Process.Start("mailto:" + linkLabel1.Text); }
             catch { } 
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try { System.Diagnostics.Process.Start("https://" + linkLabel2.Text); }
+            catch { } 
+        }
     }
 }
