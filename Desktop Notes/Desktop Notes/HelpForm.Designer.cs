@@ -74,7 +74,7 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Consolas", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(this.linkLabel1.Location.X, this.linkLabel1.Location.Y + this.linkLabel1.Height + 5);
+            this.linkLabel2.Location = new System.Drawing.Point(58, 290);
             this.linkLabel2.Margin = new System.Windows.Forms.Padding(3);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(184, 17);
