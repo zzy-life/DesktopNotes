@@ -56,9 +56,6 @@
     <Component Id="NewtonsoftJsonDll" Guid="*">
       <File Id="NewtonsoftJsonDll" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.dll" />
     </Component>
-    <Component Id="NewtonsoftJsonPdb" Guid="*">
-      <File Id="NewtonsoftJsonPdb" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.pdb" />
-    </Component>
     <Component Id="NewtonsoftJsonXml" Guid="*">
       <File Id="NewtonsoftJsonXml" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.xml" />
     </Component>
