@@ -44,9 +44,24 @@
 
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      <Component Id="MainExe" Guid="82B9A2FD-93C6-4917-8AE5-315FD158BE31">
+      <Component Id="MainExe" Guid="*">
         <File Id="MainExe" Name="Desktop_Notes.exe" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe" />
       </Component>
+    <Component Id="ConfigFile" Guid="*">
+      <File Id="ConfigFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.config" />
+    </Component>
+    <Component Id="ManifestFile" Guid="*">
+      <File Id="ManifestFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.manifest" />
+    </Component>
+    <Component Id="NewtonsoftJsonDll" Guid="*">
+      <File Id="NewtonsoftJsonDll" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.dll" />
+    </Component>
+    <Component Id="NewtonsoftJsonPdb" Guid="*">
+      <File Id="NewtonsoftJsonPdb" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.pdb" />
+    </Component>
+    <Component Id="NewtonsoftJsonXml" Guid="*">
+      <File Id="NewtonsoftJsonXml" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.xml" />
+    </Component>
     </ComponentGroup>
   </Fragment>
 
