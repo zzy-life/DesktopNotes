@@ -364,12 +364,12 @@ namespace Desktop_Notes
 
         private void deleteButton_Enter(object sender, EventArgs e)
         {
-            deleteNote.Image = Properties.Resources.delete;
+            deleteNote.Image = Properties.Resources.edit;
         }
 
         private void deleteButton_Leave(object sender, EventArgs e)
         {
-            deleteNote.Image = Properties.Resources.delete_gray;
+            deleteNote.Image = Properties.Resources.edit_gray;
         }
 
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)

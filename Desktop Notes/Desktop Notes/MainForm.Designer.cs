@@ -378,9 +378,9 @@
             this.TopBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TopBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.TopBar.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
-            this.TopBar.Controls.Add(this.hideNote, 2, 0);
+            this.TopBar.Controls.Add(this.hideNote, 3, 0);
             this.TopBar.Controls.Add(this.addNote, 0, 0);
-            this.TopBar.Controls.Add(this.deleteNote, 3, 0);
+            this.TopBar.Controls.Add(this.deleteNote, 2, 0);
             this.TopBar.Controls.Add(this.titlebar, 1, 0);
             this.TopBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopBar.Location = new System.Drawing.Point(0, 0);
@@ -438,7 +438,7 @@
             this.deleteNote.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Azure;
             this.deleteNote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cornsilk;
             this.deleteNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteNote.Image = global::Desktop_Notes.Properties.Resources.delete_gray;
+            this.deleteNote.Image = global::Desktop_Notes.Properties.Resources.edit_gray;
             this.deleteNote.Location =  new System.Drawing.Point(149, 1);
             this.deleteNote.Margin = new System.Windows.Forms.Padding(1);
             this.deleteNote.Name = "deleteNote";
