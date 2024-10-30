@@ -33,6 +33,8 @@ namespace Desktop_Notes
             g.FillRectangle(brush, 0, 0, sureDialog.Width, sureDialog.Height);
             sureDialog.BackgroundImage = image;
             sureDialog.BackgroundImageLayout = ImageLayout.Stretch;
+
+            this.notebox1.Enter += new EventHandler(notebox1_Enter); // 添加这一行
         }
 
         private void LoadData(FormData dat = null)
@@ -288,6 +290,7 @@ namespace Desktop_Notes
         {
             // 切换 notebox1 的 ReadOnly 属性
             notebox1.ReadOnly = !notebox1.ReadOnly;
+            notebox1.TabStop = !notebox1.ReadOnly;
 
             // 显示当前状态
             if (notebox1.ReadOnly)
@@ -297,6 +300,15 @@ namespace Desktop_Notes
             else
             {
                 MessageBox.Show("已设置为可编辑模式");
+            }
+        }
+
+        // 禁止控件在只读状态时聚焦
+        private void notebox1_Enter(object sender, EventArgs e)
+        {
+            if (notebox1.ReadOnly)
+            {
+                this.SelectNextControl(notebox1, true, true, true, true);
             }
         }
 
