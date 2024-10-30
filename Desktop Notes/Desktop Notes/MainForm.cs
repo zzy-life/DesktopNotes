@@ -343,6 +343,16 @@ namespace Desktop_Notes
         private void deleteButton_Enter(object sender, EventArgs e)
         {
             deleteNote.Image = Properties.Resources.delete;
+            // 设置按钮上的文本
+            deleteNote.Text = "删除";
+
+            // 设置图像和文本的关系为图像在文本左侧
+            deleteNote.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+
+            // 可能还需要调整图像与文本之间的间距
+            deleteNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            deleteNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            
         }
 
         private void deleteButton_Leave(object sender, EventArgs e)
