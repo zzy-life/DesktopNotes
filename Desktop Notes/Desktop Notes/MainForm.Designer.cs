@@ -399,7 +399,7 @@
             this.hideNote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cornsilk;
             this.hideNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hideNote.Image = global::Desktop_Notes.Properties.Resources.hide_gray;
-            this.hideNote.Location = new System.Drawing.Point(149, 1);
+            this.hideNote.Location = new System.Drawing.Point(177, 1);
             this.hideNote.Margin = new System.Windows.Forms.Padding(1);
             this.hideNote.Name = "hideNote";
             this.hideNote.Size = new System.Drawing.Size(26, 24);
@@ -439,7 +439,7 @@
             this.deleteNote.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Cornsilk;
             this.deleteNote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteNote.Image = global::Desktop_Notes.Properties.Resources.delete_gray;
-            this.deleteNote.Location = new System.Drawing.Point(177, 1);
+            this.deleteNote.Location =  new System.Drawing.Point(149, 1);
             this.deleteNote.Margin = new System.Windows.Forms.Padding(1);
             this.deleteNote.Name = "deleteNote";
             this.deleteNote.Size = new System.Drawing.Size(26, 24);

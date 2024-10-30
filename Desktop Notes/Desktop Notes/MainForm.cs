@@ -286,8 +286,18 @@ namespace Desktop_Notes
         }
         private void deleteNote_Click(object sender, EventArgs e)
         {
-            sureDialog.Visible = true;
-            this.TopMost = true;
+            // 切换 notebox1 的 ReadOnly 属性
+            notebox1.ReadOnly = !notebox1.ReadOnly;
+
+            // 显示当前状态
+            if (notebox1.ReadOnly)
+            {
+                MessageBox.Show("已设置为只读模式");
+            }
+            else
+            {
+                MessageBox.Show("已设置为可编辑模式");
+            }
         }
 
         private void settings_Click(object sender, EventArgs e)
@@ -343,16 +353,6 @@ namespace Desktop_Notes
         private void deleteButton_Enter(object sender, EventArgs e)
         {
             deleteNote.Image = Properties.Resources.delete;
-            // 设置按钮上的文本
-            deleteNote.Text = "删除";
-
-            // 设置图像和文本的关系为图像在文本左侧
-            deleteNote.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-
-            // 可能还需要调整图像与文本之间的间距
-            deleteNote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            deleteNote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            
         }
 
         private void deleteButton_Leave(object sender, EventArgs e)
