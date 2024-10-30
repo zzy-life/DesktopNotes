@@ -3,39 +3,30 @@
 <?define Guid = "E4D9B1E5-BE35-4CD8-8A81-983EDA7089B8"?>
 
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
-
   <Package Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" Version="!(bind.FileVersion.MainExe)" UpgradeCode="$(var.Guid)" Language="1033" InstallerVersion="500" Scope="perUser">
-
     <SummaryInformation Manufacturer="$(var.Manufacturer)" />
-
     <Icon Id="Logo.ico" SourceFile="Images\main.ico" />
-
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
     <Property Id="ARPNOREPAIR" Value="yes" Secure="yes" />
     <Property Id="ARPNOMODIFY" Value="yes" Secure="yes" />
-
     <Media Id="1" Cabinet="App.cab" EmbedCab="yes" />
-
     <Feature Id="ProductFeature" Title="$(var.Name)" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="DesktopShortcutComponent" />
     </Feature>
-
     <StandardDirectory Id="LocalAppDataFolder">
       <Directory Id="INSTALLFOLDER" Name="$(var.Name)" />
     </StandardDirectory>
-
     <StandardDirectory Id="ProgramMenuFolder">
       <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)" />
     </StandardDirectory>
-
+    <StandardDirectory Id="DesktopFolder" />
     <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
     <Upgrade Id="$(var.Guid)">
       <UpgradeVersion Minimum="0.0.0.0" Maximum="255.0.0.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="no" />
     </Upgrade>
-
     <CustomAction Id="RunMainExe" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]$(var.Name).exe" Execute="commit" Return="asyncNoWait" />
-
     <InstallExecuteSequence>
       <RemoveExistingProducts Before="InstallInitialize" />
       <Custom Action="RunMainExe" Before="InstallFinalize" />
@@ -47,18 +38,18 @@
       <Component Id="MainExe" Guid="*">
         <File Id="MainExe" Name="Desktop_Notes.exe" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe" />
       </Component>
-    <Component Id="ConfigFile" Guid="*">
-      <File Id="ConfigFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.config" />
-    </Component>
-    <Component Id="ManifestFile" Guid="*">
-      <File Id="ManifestFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.manifest" />
-    </Component>
-    <Component Id="NewtonsoftJsonDll" Guid="*">
-      <File Id="NewtonsoftJsonDll" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.dll" />
-    </Component>
-    <Component Id="NewtonsoftJsonXml" Guid="*">
-      <File Id="NewtonsoftJsonXml" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.xml" />
-    </Component>
+      <Component Id="ConfigFile" Guid="*">
+        <File Id="ConfigFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.config" />
+      </Component>
+      <Component Id="ManifestFile" Guid="*">
+        <File Id="ManifestFile" Source="Desktop Notes\Desktop Notes\bin\Release\Desktop_Notes.exe.manifest" />
+      </Component>
+      <Component Id="NewtonsoftJsonDll" Guid="*">
+        <File Id="NewtonsoftJsonDll" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="NewtonsoftJsonXml" Guid="*">
+        <File Id="NewtonsoftJsonXml" Source="Desktop Notes\Desktop Notes\bin\Release\Newtonsoft.Json.xml" />
+      </Component>
     </ComponentGroup>
   </Fragment>
 
@@ -68,6 +59,13 @@
         <Shortcut Id="ApplicationStartMenuShortcut" Name="$(var.Name)" Icon="Logo.ico" Target="[#MainExe]" WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
         <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.Manufacturer)\$(var.Name)" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="DesktopShortcutComponent" Guid="*">
+        <Shortcut Id="DesktopShortcut" Name="$(var.Name)" Description="Launch $(var.Name)" Target="[#MainExe]" Icon="Logo.ico" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="DesktopFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.Manufacturer)\$(var.Name)" Name="desktopShortcut" Type="integer" Value="1" KeyPath="yes" />
       </Component>
     </DirectoryRef>
   </Fragment>
