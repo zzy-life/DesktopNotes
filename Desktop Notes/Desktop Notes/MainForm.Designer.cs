@@ -42,7 +42,6 @@
             this.newNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.hideNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notebox1 = new System.Windows.Forms.RichTextBox();
@@ -85,7 +84,6 @@
             this.newNoteToolStripMenuItem,
             this.toolStripSeparator3,
             this.hideNoteToolStripMenuItem,
-            this.deleteNoteToolStripMenuItem,
             this.toolStripSeparator4,
             this.settingsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -166,14 +164,7 @@
             this.hideNoteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.hideNoteToolStripMenuItem.Text = "隐藏笔记";
             this.hideNoteToolStripMenuItem.Click += new System.EventHandler(this.hideNote_Click);
-            // 
-            // deleteNoteToolStripMenuItem
-            // 
-            this.deleteNoteToolStripMenuItem.Image = global::Desktop_Notes.Properties.Resources.delete;
-            this.deleteNoteToolStripMenuItem.Name = "deleteNoteToolStripMenuItem";
-            this.deleteNoteToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.deleteNoteToolStripMenuItem.Text = "删除笔记";
-            this.deleteNoteToolStripMenuItem.Click += new System.EventHandler(this.deleteNote_Click);
+          
             // 
             // toolStripSeparator4
             // 
@@ -503,7 +494,6 @@
 
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem newNoteToolStripMenuItem; 
-        private System.Windows.Forms.ToolStripMenuItem deleteNoteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         public System.Windows.Forms.RichTextBox notebox1;
