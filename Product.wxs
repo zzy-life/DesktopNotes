@@ -63,7 +63,7 @@
     </DirectoryRef>
     <DirectoryRef Id="DesktopFolder">
       <Component Id="DesktopShortcutComponent" Guid="*">
-        <Shortcut Id="DesktopShortcut" Name="$(var.Name)" Description="Launch $(var.Name)" Target="[#MainExe]" Icon="Logo.ico" WorkingDirectory="INSTALLFOLDER" />
+        <Shortcut Id="DesktopShortcut" Name="$(var.Name)" Description="极简桌面便签" Target="[#MainExe]" Icon="Logo.ico" WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="DesktopFolder" On="uninstall" />
         <RegistryValue Root="HKCU" Key="Software\Microsoft\$(var.Manufacturer)\$(var.Name)" Name="desktopShortcut" Type="integer" Value="1" KeyPath="yes" />
       </Component>
