@@ -47,7 +47,7 @@
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.BalloonTipText = "Desktop Notes is here...";
+            this.notifyIcon1.BalloonTipText = "公众号：网络弧线";
             this.notifyIcon1.BalloonTipTitle = "Desktop Notes";
             this.notifyIcon1.ContextMenuStrip = this.context1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
