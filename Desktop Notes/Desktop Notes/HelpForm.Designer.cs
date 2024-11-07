@@ -106,7 +106,7 @@
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(152, 33);
             this.productName.TabIndex = 6;
-            this.productName.Text = "桌面便笺";
+            this.productName.Text = "桌面便签";
             // 
             // button1
             // 

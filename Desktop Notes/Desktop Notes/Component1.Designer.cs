@@ -47,11 +47,11 @@
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.BalloonTipText = "公众号：网络弧线";
-            this.notifyIcon1.BalloonTipTitle = "桌面便笺";
+            this.notifyIcon1.BalloonTipText = "更多优秀软件请关注微信公众号：网络弧线";
+            this.notifyIcon1.BalloonTipTitle = "桌面便签";
             this.notifyIcon1.ContextMenuStrip = this.context1;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "桌面便笺";
+            this.notifyIcon1.Text = "桌面便签";
             this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
