@@ -110,7 +110,7 @@ namespace Desktop_Notes
             catch { }
         }
         
-        //change values 
+        //change values
         private void current_font_Click(object sender, EventArgs e)
         {
             FontDialog fod = new FontDialog();
@@ -130,6 +130,7 @@ namespace Desktop_Notes
                     form.Save();
                     setstyle();
                 }
+                form.SaveAsDefaultSettings(); // 保存为默认设置
             }
         }
 
@@ -150,6 +151,7 @@ namespace Desktop_Notes
                 form.Save();
                 setstyle();
             }
+            form.SaveAsDefaultSettings(); // 保存为默认设置
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -163,6 +165,7 @@ namespace Desktop_Notes
             form.Opacity = (double)opacity_val.Value;
             int v = (int)(opacity_val.Value * 100);
             if (v >= trackBar1.Minimum && v != trackBar1.Value) trackBar1.Value = v;
+            form.SaveAsDefaultSettings(); // 保存为默认设置
         }
 
         //change custom themes
@@ -183,6 +186,7 @@ namespace Desktop_Notes
                     form.Save();
                     settheme();
                 }
+                form.SaveAsDefaultSettings(); // 保存为默认设置
             }
         }
 
@@ -203,6 +207,7 @@ namespace Desktop_Notes
                     form.Save();
                     settheme();
                 }
+                form.SaveAsDefaultSettings(); // 保存为默认设置
             }
         }
 
@@ -223,7 +228,8 @@ namespace Desktop_Notes
                     form.Save();
                     settheme();
                 }
-            }           
+                form.SaveAsDefaultSettings(); // 保存为默认设置
+            }
         }
 
 

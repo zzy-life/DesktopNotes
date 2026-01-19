@@ -90,4 +90,24 @@ namespace Desktop_Notes
             FStyle = FontStyle.Regular;
         }
     }
+
+    // 默认便签设置类，用于保存上一次使用的样式设置
+    public class DefaultNoteSettings
+    {
+        public int theme { get; set; }
+        public int style { get; set; }
+        public double opacity { get; set; }
+        public Theme customTheme { get; set; }
+        public Style customStyle { get; set; }
+
+        public DefaultNoteSettings()
+        {
+            // 设置初始默认值
+            theme = 1; // 默认主题
+            style = 1; // 默认样式
+            opacity = 0.95; // 默认不透明度
+            customTheme = new Theme();
+            customStyle = new Style();
+        }
+    }
 }

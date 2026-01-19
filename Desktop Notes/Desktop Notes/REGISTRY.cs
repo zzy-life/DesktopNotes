@@ -75,5 +75,34 @@ namespace Desktop_Notes
                 return false;
             }
         }
+
+        // 默认便签设置的注册表键名
+        private const string DEFAULT_SETTINGS_KEY = "_DefaultSettings";
+
+        // 保存默认便签设置
+        public static void SaveDefaultSettings(DefaultNoteSettings settings)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(settings);
+                REG_PATH.SetValue(DEFAULT_SETTINGS_KEY, json);
+            }
+            catch { }
+        }
+
+        // 读取默认便签设置
+        public static DefaultNoteSettings GetDefaultSettings()
+        {
+            try
+            {
+                object dat = REG_PATH.GetValue(DEFAULT_SETTINGS_KEY, null);
+                if (dat == null) return new DefaultNoteSettings();
+                return JsonConvert.DeserializeObject<DefaultNoteSettings>((string)dat);
+            }
+            catch
+            {
+                return new DefaultNoteSettings();
+            }
+        }
     }
 }
