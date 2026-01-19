@@ -40,24 +40,46 @@ namespace Desktop_Notes
         private void LoadData(FormData dat = null)
         {
             //load defaults
-            this.Opacity = 0.95;
             this.StartPosition = FormStartPosition.WindowsDefaultLocation;
             this.CreationTime = DateTime.Now;
             if (string.IsNullOrEmpty(Title))
             {
                 Title = string.Format("Note {0:##}", FORM_ID);
             }
-            if (Program.Themes.Count > 1)
-            {
-                Random rand = new Random();
-                CurrentTheme = rand.Next(Program.Themes.Count - 1) + 1;
-            }
-            if (Program.Styles.Count > 1)
-            {
-                CurrentStyle = 1;
-            }
+
+            // 如果是新建便签，应用上次保存的默认设置
             if (dat == null)
             {
+                DefaultNoteSettings defaultSettings = REGISTRY.GetDefaultSettings();
+                this.Opacity = defaultSettings.opacity;
+
+                if (defaultSettings.customTheme != null)
+                {
+                    this.CustomTheme = defaultSettings.customTheme;
+                }
+                if (defaultSettings.customStyle != null)
+                {
+                    this.CustomStyle = defaultSettings.customStyle;
+                }
+
+                if (Program.Themes.Count > defaultSettings.theme)
+                {
+                    CurrentTheme = defaultSettings.theme;
+                }
+                else if (Program.Themes.Count > 1)
+                {
+                    CurrentTheme = 1;
+                }
+
+                if (Program.Styles.Count > defaultSettings.style)
+                {
+                    CurrentStyle = defaultSettings.style;
+                }
+                else if (Program.Styles.Count > 1)
+                {
+                    CurrentStyle = 1;
+                }
+
                 this.Show();
                 return;
             }
@@ -110,6 +132,7 @@ namespace Desktop_Notes
                     Save();
                 }
                 ReloadTheme();
+                SaveAsDefaultSettings(); // 保存为默认设置
             }
         }
 
@@ -129,7 +152,20 @@ namespace Desktop_Notes
                     Save();
                 }
                 ReloadStyle();
+                SaveAsDefaultSettings(); // 保存为默认设置
             }
+        }
+
+        // 保存当前便签的样式设置为默认设置
+        public void SaveAsDefaultSettings()
+        {
+            DefaultNoteSettings settings = new DefaultNoteSettings();
+            settings.theme = this.CurrentTheme;
+            settings.style = this.CurrentStyle;
+            settings.opacity = this.Opacity;
+            settings.customTheme = this.CustomTheme;
+            settings.customStyle = this.CustomStyle;
+            REGISTRY.SaveDefaultSettings(settings);
         }
 
         public void ReloadTheme()
