@@ -22,13 +22,12 @@
       <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)" />
     </StandardDirectory>
     <StandardDirectory Id="DesktopFolder" />
-    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
-    <Upgrade Id="$(var.Guid)">
-      <UpgradeVersion Minimum="0.0.0.0" Maximum="255.0.0.0" Property="PREVIOUSVERSIONSINSTALLED" IncludeMinimum="yes" IncludeMaximum="no" />
-    </Upgrade>
+    <MajorUpgrade
+      DowngradeErrorMessage="不支持降级安装。请先卸载当前版本再安装旧版本。"
+      Schedule="afterInstallExecute"
+      AllowSameVersionUpgrades="yes" />
     <CustomAction Id="RunMainExe" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]$(var.Name).exe" Execute="commit" Return="asyncNoWait" />
     <InstallExecuteSequence>
-      <RemoveExistingProducts Before="InstallInitialize" />
       <Custom Action="RunMainExe" Before="InstallFinalize" />
     </InstallExecuteSequence>
   </Package>
