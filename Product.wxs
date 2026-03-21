@@ -24,11 +24,11 @@
     <StandardDirectory Id="DesktopFolder" />
     <MajorUpgrade
       DowngradeErrorMessage="不支持降级安装。请先卸载当前版本再安装旧版本。"
-      Schedule="afterInstallExecute"
+      Schedule="afterInstallInitialize"
       AllowSameVersionUpgrades="yes" />
     <CustomAction Id="RunMainExe" Directory="INSTALLFOLDER" ExeCommand="[INSTALLFOLDER]$(var.Name).exe" Execute="commit" Return="asyncNoWait" />
     <InstallExecuteSequence>
-      <Custom Action="RunMainExe" Before="InstallFinalize" />
+      <Custom Action="RunMainExe" Before="InstallFinalize"><![CDATA[NOT REMOVE~="ALL"]]></Custom>
     </InstallExecuteSequence>
   </Package>
 

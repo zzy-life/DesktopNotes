@@ -1,5 +1,6 @@
 ﻿using Microsoft.Win32;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Desktop_Notes
@@ -14,7 +15,14 @@ namespace Desktop_Notes
         {
             get
             {
-                return REG_PATH.GetValueNames();
+                List<string> notes = new List<string>();
+                foreach (string name in REG_PATH.GetValueNames())
+                {
+                    // 过滤掉非便签数据的注册表项
+                    if (name.StartsWith("_")) continue;
+                    notes.Add(name);
+                }
+                return notes.ToArray();
             }
         }
 
@@ -39,8 +47,10 @@ namespace Desktop_Notes
 
         public static void DeleteAll()
         {
-            foreach (string val in OPENED_NOTES)
+            foreach (string val in REG_PATH.GetValueNames())
             {
+                // 保留以下划线开头的特殊键（如 _DefaultSettings）
+                if (val.StartsWith("_")) continue;
                 REG_PATH.DeleteValue(val);
             }
         }

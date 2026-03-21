@@ -39,73 +39,94 @@ namespace Desktop_Notes
 
         private void LoadData(FormData dat = null)
         {
-            //load defaults
-            this.StartPosition = FormStartPosition.WindowsDefaultLocation;
-            this.CreationTime = DateTime.Now;
-            if (string.IsNullOrEmpty(Title))
+            _isLoading = true;
+            try
             {
-                Title = string.Format("Note {0:##}", FORM_ID);
-            }
-
-            // 如果是新建便签，应用上次保存的默认设置
-            if (dat == null)
-            {
-                DefaultNoteSettings defaultSettings = REGISTRY.GetDefaultSettings();
-                this.Opacity = defaultSettings.opacity;
-
-                if (defaultSettings.customTheme != null)
+                //load defaults
+                this.StartPosition = FormStartPosition.WindowsDefaultLocation;
+                this.CreationTime = DateTime.Now;
+                if (string.IsNullOrEmpty(titlebar.Text))
                 {
-                    this.CustomTheme = defaultSettings.customTheme;
-                }
-                if (defaultSettings.customStyle != null)
-                {
-                    this.CustomStyle = defaultSettings.customStyle;
+                    titlebar.Text = string.Format("Note {0:##}", FORM_ID);
                 }
 
-                if (Program.Themes.Count > defaultSettings.theme)
+                // 如果是新建便签，应用上次保存的默认设置
+                if (dat == null)
                 {
-                    CurrentTheme = defaultSettings.theme;
-                }
-                else if (Program.Themes.Count > 1)
-                {
-                    CurrentTheme = 1;
+                    DefaultNoteSettings defaultSettings = REGISTRY.GetDefaultSettings();
+                    this.Opacity = defaultSettings.opacity;
+
+                    if (defaultSettings.customTheme != null)
+                    {
+                        this.CustomTheme = defaultSettings.customTheme;
+                    }
+                    if (defaultSettings.customStyle != null)
+                    {
+                        this.CustomStyle = defaultSettings.customStyle;
+                    }
+
+                    if (Program.Themes.Count > defaultSettings.theme)
+                    {
+                        _theme = defaultSettings.theme;
+                    }
+                    else if (Program.Themes.Count > 1)
+                    {
+                        _theme = 1;
+                    }
+                    ReloadTheme();
+
+                    if (Program.Styles.Count > defaultSettings.style)
+                    {
+                        _style = defaultSettings.style;
+                    }
+                    else if (Program.Styles.Count > 1)
+                    {
+                        _style = 1;
+                    }
+                    ReloadStyle();
+
+                    _isLoading = false;
+                    Save();
+                    this.Show();
+                    return;
                 }
 
-                if (Program.Styles.Count > defaultSettings.style)
-                {
-                    CurrentStyle = defaultSettings.style;
-                }
-                else if (Program.Styles.Count > 1)
-                {
-                    CurrentStyle = 1;
-                }
+                //load others
+                this.SuspendLayout();
+                this.StartPosition = FormStartPosition.Manual;
+                this.Location = dat.Location;
+                this.Size = dat.FormSize;
+                this.notebox1.Rtf = dat.data;
+                this.Opacity = dat.opacity;
+                titlebar.Text = dat.title;
+                if (dat.customTheme != null) { this.CustomTheme = dat.customTheme; }
+                _theme = dat.theme;
+                if (_theme >= Program.Themes.Count) _theme = Program.Themes.Count - 1;
+                if (_theme < 0) _theme = 0;
+                ReloadTheme();
+                if (dat.customStyle != null) { this.CustomStyle = dat.customStyle; }
+                _style = dat.currentStyle;
+                if (_style >= Program.Styles.Count) _style = Program.Styles.Count - 1;
+                if (_style < 0) _style = 0;
+                ReloadStyle();
+                if (dat.creationTime > new DateTime(2014, 1, 1)) { this.CreationTime = dat.creationTime; }
+                this.ResumeLayout(true);
 
+                _isLoading = false;
+                Save();
                 this.Show();
-                return;
+                if (dat.hidden) this.Hide();
             }
-
-            //load others
-            this.SuspendLayout();
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = dat.Location;
-            this.Size = dat.FormSize;
-            this.notebox1.Rtf = dat.data;
-            this.Opacity = dat.opacity;
-            this.Title = dat.title;
-            if (dat.customTheme != null) { this.CustomTheme = dat.customTheme; }
-            this.CurrentTheme = dat.theme;
-            if (dat.customStyle != null) { this.CustomStyle = dat.customStyle; }
-            this.CurrentStyle = dat.currentStyle;
-            if (dat.creationTime > new DateTime(2014, 1, 1)) { this.CreationTime = dat.creationTime; }
-            this.ResumeLayout(true);
-
-            this.Show();
-            if (dat.hidden) this.Hide();
+            finally
+            {
+                _isLoading = false;
+            }
         }
 
         //
         // Properties and Variables
         //
+        private bool _isLoading = false;
         public DateTime CreationTime { get; set; }
         public int FORM_ID { get; set; }
         public string Title
@@ -217,6 +238,7 @@ namespace Desktop_Notes
         // 
         public bool Save()
         {
+            if (_isLoading) return true;
             try
             {
                 REGISTRY.SetData(FORM_ID.ToString(), new FormData(this));
