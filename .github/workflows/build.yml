@@ -36,6 +36,11 @@ jobs:
           name: Desktop Notes
           path: "Desktop Notes/Desktop Notes/bin/Release/**"
 
+      - name: Package Release as ZIP
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: Compress-Archive -Path "Desktop Notes/Desktop Notes/bin/Release/*" -DestinationPath "Desktop_Notes.zip"
+        shell: powershell
+
       - name: Update latest Release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v2
@@ -44,7 +49,7 @@ jobs:
           name: Latest Build
           prerelease: true
           make_latest: false
-          files: "Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+          files: Desktop_Notes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

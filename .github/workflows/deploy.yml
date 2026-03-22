@@ -29,29 +29,23 @@ jobs:
           dotnet tool install --global wix --version 4.0.5
           wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
         
-      - name: Upload MSI as an artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Desktop Notes
-          path: "Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+          path: "Desktop Notes/Desktop Notes/bin/Release/**"
+
+      - name: Package Release as ZIP
+        run: Compress-Archive -Path "Desktop Notes/Desktop Notes/bin/Release/*" -DestinationPath "Desktop_Notes.zip"
+        shell: powershell
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ github.ref_name  }}
-          release_name: Release ${{ github.ref_name  }}
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           draft: false
           prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
+          files: Desktop_Notes.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
-          asset_name: Desktop_Notes.msi
-          asset_content_type: application/octet-stream
