@@ -4,7 +4,7 @@
 
 <Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
      xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
-  <Package Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" Version="!(bind.FileVersion.MainExe)" UpgradeCode="$(var.Guid)" Language="1033" InstallerVersion="500" Scope="perUser">
+  <Package Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" Version="!(bind.FileVersion.MainExe)" UpgradeCode="$(var.Guid)" Language="2052" Codepage="936" InstallerVersion="500" Scope="perUser">
     <SummaryInformation Manufacturer="$(var.Manufacturer)" />
     <Icon Id="Logo.ico" SourceFile="Images\main.ico" />
     <Property Id="ARPPRODUCTICON" Value="Logo.ico" />
