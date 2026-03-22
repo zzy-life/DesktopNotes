@@ -27,7 +27,7 @@ jobs:
       - name: Create installer
         run: |
           dotnet tool install --global wix --version 4.0.5
-          wix build Product.wxs -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
+          wix build Product.wxs -ext WixToolset.Util.wixext -o "./Desktop Notes/Desktop Notes/bin/Release/Desktop_Notes.msi"
         
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
