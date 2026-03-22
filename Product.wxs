@@ -2,7 +2,8 @@
 <?define Manufacturer = "Webarcx"?>
 <?define Guid = "E4D9B1E5-BE35-4CD8-8A81-983EDA7089B8"?>
 
-<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:util="http://wixtoolset.org/schemas/v4/wxs/util">
   <Package Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" Version="!(bind.FileVersion.MainExe)" UpgradeCode="$(var.Guid)" Language="1033" InstallerVersion="500" Scope="perUser">
     <SummaryInformation Manufacturer="$(var.Manufacturer)" />
     <Icon Id="Logo.ico" SourceFile="Images\main.ico" />
@@ -21,6 +22,12 @@
     <StandardDirectory Id="ProgramMenuFolder">
       <Directory Id="ApplicationProgramsFolder" Name="$(var.Name)" />
     </StandardDirectory>
+    <util:CloseApplication
+      Id="CloseDesktopNotes"
+      Target="Desktop_Notes.exe"
+      CloseMessage="yes"
+      RebootPrompt="no"
+      TerminateProcess="5" />
     <MajorUpgrade
       DowngradeErrorMessage="不支持降级安装。请先卸载当前版本再安装旧版本。"
       Schedule="afterInstallInitialize"
