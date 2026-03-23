@@ -145,16 +145,11 @@ namespace Desktop_Notes
         {
             try
             {
-                if (!Directory.Exists(NOTES_DIR))
-                    Directory.CreateDirectory(NOTES_DIR);
                 string json = JsonConvert.SerializeObject(data, Formatting.Indented);
                 string path = Path.Combine(NOTES_DIR, id + ".json");
                 File.WriteAllText(path, json);
             }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine("SetData failed: " + ex.Message);
-            }
+            catch { }
         }
 
         public static FormData GetData(string id)
