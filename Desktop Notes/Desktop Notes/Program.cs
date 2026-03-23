@@ -105,8 +105,8 @@ namespace Desktop_Notes
             foreach (FormData dat in data) AddNewNote(dat);
             if (CUR_ID == 1) AddNewNote();
 
-            REGISTRY.DeleteAll();
-            SaveAllNotes();
+            // 注意：不再执行 DeleteAll + SaveAllNotes
+            // LoadData() 中已经用新 ID 调用了 Save()，数据已持久化
         }
 
         public static void SaveAllNotes()
